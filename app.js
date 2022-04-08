@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 const APP = './app/routes'
 // const nodes = ['admin','basic','board','game','todo','user']
-const nodes = ['user']
+const nodes = ['board','user']
 for(const leaf of nodes){
   require(`${APP}/${leaf}.route`)({url:`/api/${leaf}`,app})
 }
@@ -21,10 +21,7 @@ const db = require('./app/models/index')
 db.mongoose
   .connect(MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true})
   .then(() => {
-    console.log(' 몽고 DB 연결 설정 ')
-    console.log(' db.url ', db.url)
-    console.log(' db.mongoose ', db.mongoose)
-    console.log(' db.user.db ', db.user.db)
+    console.log(' 몽고 DB 연결 성공 ')
   })
   .catch(err => {console.log('몽고DB와 연결 실패',err)
         process.exit();
