@@ -1,9 +1,9 @@
 module.exports = mongoose => mongoose.model('board',
     mongoose.Schema(
         {
-            passengerId : String,
+            title : String,
             name : String,
-            teamId : String,
+            team : String,
             subject : String,
         }, {timestamps: true}
     )
