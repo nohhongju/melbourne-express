@@ -12,12 +12,12 @@ app.use(cors());
 
 app.post('/add', cors(corsOptions),(req, res) => {
     const service = new BoardService()
-    res.status(200).json(service.boradform(req, res))
+    res.status(200).json(service.boardform(req, res))
 })
 
 app.get('/list', cors(corsOptions),(req, res) => {
     const service = BoardService()
-    res.status(200).json(service.boradlist(req, res))
+    res.status(200).json(service.boardlist(req, res))
 })
 
 export default app
